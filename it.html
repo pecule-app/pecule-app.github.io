@@ -313,35 +313,56 @@ document.querySelectorAll('.lang a').forEach(function(a){
 </script>
 <script>
 /* Compteur de téléchargements des manuels : somme des téléchargements de chaque PDF
-   sur toutes les Releases GitHub du site (API publique, sans cookie). */
+   sur toutes les Releases GitHub du site (API publique, sans cookie).
+   GitHub met son total à jour avec quelques minutes de retard : un clic ajoute 1
+   tout de suite, et le chiffre affiché ne redescend jamais en attendant. */
 (function(){
   var links=document.querySelectorAll('a[data-manual]');
   if(!links.length||!window.fetch)return;
   var lang=document.documentElement.lang||'fr';
   var words={fr:['téléchargement','téléchargements'],en:['download','downloads'],
     de:['Download','Downloads'],es:['descarga','descargas'],it:['download','download']}[lang]||['download','downloads'];
-  function show(counts){
+  var plural=window.Intl&&Intl.PluralRules?new Intl.PluralRules(lang):null;
+  var KEY='pecule-dl-counts', REFRESH=60*1000, KEEP=60*60*1000;
+  var cache={t:0,counts:null};
+  try{cache=JSON.parse(localStorage.getItem(KEY))||cache;}catch(e){}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(cache));}catch(e){}}
+  function show(){
+    if(!cache.counts)return;
     links.forEach(function(a){
-      var n=counts[a.getAttribute('data-manual')], sub=a.querySelector('.sub');
-      if(n==null||!sub||sub.querySelector('.dl-count'))return;
-      var s=document.createElement('span');
-      s.className='dl-count';
-      s.textContent=' · '+new Intl.NumberFormat(lang).format(n)+' '+words[new Intl.PluralRules(lang).select(n)==='one'?0:1];
-      sub.appendChild(s);
+      var n=cache.counts[a.getAttribute('data-manual')], sub=a.querySelector('.sub');
+      if(n==null||!sub)return;
+      var s=sub.querySelector('.dl-count');
+      if(!s){s=document.createElement('span');s.className='dl-count';sub.appendChild(s);}
+      var one=plural?plural.select(n)==='one':n===1;
+      s.textContent=' · '+new Intl.NumberFormat(lang).format(n)+' '+words[one?0:1];
     });
   }
-  var KEY='pecule-dl-counts', cached=null;
-  try{cached=JSON.parse(sessionStorage.getItem(KEY));}catch(e){}
-  if(cached){show(cached);return;}
+  links.forEach(function(a){
+    a.addEventListener('click',function(){
+      var name=a.getAttribute('data-manual');
+      if(!cache.counts||cache.counts[name]==null)return;
+      cache.counts[name]++;
+      cache.bumped=Date.now();
+      save();show();
+    });
+  });
+  show();
+  if(Date.now()-cache.t<REFRESH)return;
   fetch('https://api.github.com/repos/pecule-app/pecule-app.github.io/releases?per_page=100')
-    .then(function(r){return r.ok?r.json():[];})
+    .then(function(r){return r.ok?r.json():null;})
     .then(function(releases){
+      if(!releases)return;
       var counts={};
       releases.forEach(function(r){(r.assets||[]).forEach(function(as){
         counts[as.name]=(counts[as.name]||0)+as.download_count;
       });});
-      try{sessionStorage.setItem(KEY,JSON.stringify(counts));}catch(e){}
-      show(counts);
+      // Clic récent : on garde le chiffre local s'il est plus haut que celui de GitHub.
+      if(cache.counts&&Date.now()-(cache.bumped||0)<KEEP){
+        for(var k in cache.counts){if((counts[k]||0)<cache.counts[k])counts[k]=cache.counts[k];}
+      }
+      cache={t:Date.now(),counts:counts,bumped:cache.bumped};
+      save();show();
     })
     .catch(function(){});
 })();
