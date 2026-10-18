@@ -322,11 +322,11 @@ document.querySelectorAll('.lang a').forEach(function(a){
     de:['Download','Downloads'],es:['descarga','descargas'],it:['download','download']}[lang]||['download','downloads'];
   function show(counts){
     links.forEach(function(a){
-      var n=counts[a.getAttribute('data-manual')]||0, sub=a.querySelector('.sub');
-      if(!n||!sub||sub.querySelector('.dl-count'))return;
+      var n=counts[a.getAttribute('data-manual')], sub=a.querySelector('.sub');
+      if(n==null||!sub||sub.querySelector('.dl-count'))return;
       var s=document.createElement('span');
       s.className='dl-count';
-      s.textContent=' · '+new Intl.NumberFormat(lang).format(n)+' '+words[n>1?1:0];
+      s.textContent=' · '+new Intl.NumberFormat(lang).format(n)+' '+words[new Intl.PluralRules(lang).select(n)==='one'?0:1];
       sub.appendChild(s);
     });
   }
