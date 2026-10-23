@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pécule — Assistance</title>
+<meta name="description" content="Assistance et contact pour l'application Pécule pour macOS.">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<style>
+  :root{--navy:#16233f;--gold:#c6a34e;--ink:#16233f;--muted:#5a6377;--line:#e4ddca;--bg:#fbf9f2;--card:#fff}
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){--ink:#eef1f6;--muted:#a7b0c2;--line:#2a3a5c;--bg:#0e1526;--card:#161f36}
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+  .wrap{max-width:780px;margin:0 auto;padding:40px 24px 64px}
+  header{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+  header img{width:44px;height:44px;border-radius:11px}
+  header a{color:inherit;text-decoration:none;font-weight:800;font-size:1.15rem}
+  h1{font-size:2rem;margin:0 0 6px;letter-spacing:-.02em}
+  h2{font-size:1.2rem;margin:30px 0 8px}
+  .muted{color:var(--muted);font-size:.92rem}
+  a{color:var(--gold)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px 30px}
+  .mail{display:inline-block;margin-top:6px;padding:12px 20px;border-radius:12px;background:var(--navy);color:#fff;text-decoration:none;font-weight:600}
+  hr{border:0;border-top:1px solid var(--line);margin:48px 0}
+  nav.lang{font-size:.9rem;margin-bottom:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><img src="assets/logo.png" alt=""><a href="index.html">Pécule</a></header>
+  <nav class="lang"><a href="#fr">Français</a> · <a href="#en">English</a></nav>
+
+  <div class="card" id="fr">
+    <h1>Assistance</h1>
+    <p>Une question, un bug, une suggestion ? Écrivez-moi, je réponds généralement sous 48 heures.</p>
+    <a class="mail" href="mailto:thierry.hentic@gmail.com?subject=P%C3%A9cule%20%E2%80%94%20Assistance">thierry.hentic@gmail.com</a>
+
+    <h2>Pour une réponse rapide, indiquez :</h2>
+    <ul>
+      <li>votre version de macOS et de Pécule (menu Pécule › À propos de Pécule) ;</li>
+      <li>les étapes pour reproduire le problème ;</li>
+      <li>si possible, une capture d'écran.</li>
+    </ul>
+
+    <h2>Ressources</h2>
+    <ul>
+      <li><a href="index.html#faq">Foire aux questions</a></li>
+      <li><a href="https://github.com/pecule-app/pecule-app.github.io/releases/latest/download/Pecule_Manuel_FR.pdf">Manuel d'utilisation (PDF)</a></li>
+      <li><a href="privacy.html">Politique de confidentialité</a></li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="card" id="en" lang="en">
+    <h1>Support</h1>
+    <p>A question, a bug, a suggestion? Email me — I usually reply within 48 hours.</p>
+    <a class="mail" href="mailto:thierry.hentic@gmail.com?subject=P%C3%A9cule%20%E2%80%94%20Support">thierry.hentic@gmail.com</a>
+
+    <h2>To help me answer quickly, please include:</h2>
+    <ul>
+      <li>your macOS and Pécule versions (Pécule menu › About Pécule);</li>
+      <li>the steps to reproduce the problem;</li>
+      <li>a screenshot if possible.</li>
+    </ul>
+
+    <h2>Resources</h2>
+    <ul>
+      <li><a href="en.html#faq">FAQ</a></li>
+      <li><a href="https://github.com/pecule-app/pecule-app.github.io/releases/latest/download/Pecule_Manual_EN.pdf">User manual (PDF)</a></li>
+      <li><a href="privacy-en.html">Privacy policy</a></li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>
