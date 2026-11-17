@@ -3,171 +3,21 @@
     <channel>
         <title>Pecule</title>
         <item>
-            <title>Version 1.0.2</title>
-            <sparkle:version>5452</sparkle:version>
-            <sparkle:shortVersionString>1.0.2</sparkle:shortVersionString>
-            <pubDate>Sun, 15 Nov 2026 11:57:15 +0000</pubDate>
+            <title>Version 1.0.3</title>
+            <sparkle:version>5462</sparkle:version>
+            <sparkle:shortVersionString>1.0.3</sparkle:shortVersionString>
+            <pubDate>Tue, 17 Nov 2026 11:15:13 +0000</pubDate>
             <description><![CDATA[
-<h3>Ajouté</h3>
-<ul>
-<li><strong>« Enregistrer les modifications ? »</strong> : choisir une autre transaction (ou en créer une) alors que celle du panneau de saisie a des modifications non enregistrées affiche une alerte : Enregistrer, Ne pas enregistrer (la transaction revient à l'identique) ou Annuler (on reste sur la transaction en cours). Avant, la modification d'une sous-opération était gardée sans confirmation et celle des autres champs était perdue.</li>
-<li><strong>Annuler une modification ou une création de transaction</strong> (⌘Z, et ⇧⌘Z pour rétablir) : enregistrement depuis le panneau de droite (une ou plusieurs transactions, sous-opérations et virement compris), changement de statut, de mode de paiement, de relevé ou de date de pointage depuis le menu contextuel, duplication et création depuis un favori.</li>
-<li><strong>Annuler un import</strong> CSV, OFX, QIF ou PDF (⌘Z, et ⇧⌘Z pour rétablir) : toutes les transactions importées sont retirées d'un coup ; les autres transactions du compte ne sont pas touchées.</li>
-<li><strong>Annuler une suppression de transactions</strong> (⌘Z, et ⇧⌘Z pour rétablir) : les transactions reviennent à l'identique (catégorie, statut, pièces jointes, virement lié et sa transaction miroir). La boîte de confirmation le rappelle.</li>
-<li><strong>Encadré « Filtrer par période » repliable</strong> dans la courbe de trésorerie et les rapports (rubriques, recettes / dépenses, modes de paiement) ; choix mémorisé. Replié, il rappelle la période affichée ; dans les rapports, le tableau des transactions reste visible.</li>
-<li><strong>Annuler un collage ou un couper-coller</strong> (⌘Z, et ⇧⌘Z pour rétablir) : les copies collées sont supprimées et, pour un couper, les originaux reviennent à l'identique dans leur compte (catégorie, statut, pièces jointes, virement lié). Gros volumes : par paquets, avec une barre de progression.</li>
-<li><strong>Rapport annuel : page « Évolution »</strong> (page 2) comparant jusqu'à 10 années (recettes, dépenses, solde, taux d'épargne, solde en fin d'année), avec graphique et moyenne ; les tuiles de la synthèse indiquent aussi la moyenne des années précédentes, sur la même période.</li>
-<li><strong>Pièces jointes</strong> sur les transactions (reçus, factures), y compris en mode création, avec aperçu Quick Look et indicateur trombone dans la liste.</li>
-<li><strong>Rapprochement bancaire guidé</strong>, avec possibilité de rattacher le PDF du relevé.</li>
-<li><strong>Import de relevés bancaires PDF</strong> transformés en écritures : LCL, Société Générale et autres banques via des profils ; liste des banques prises en charge affichée.</li>
-<li><strong>Import QIF</strong> et <strong>export QIF</strong> des transactions.</li>
-<li><strong>Détection des doublons</strong> à l'import QIF, OFX (identifiant FITID exact) et CSV ; écran de confirmation avant import OFX.</li>
-<li><strong>Auto-catégorisation à l'import</strong> : l'application apprend de vos catégorisations précédentes.</li>
-<li><strong>Icône dans la barre de menus</strong> : soldes en un coup d'œil et saisie rapide d'une dépense sur le compte de votre choix.</li>
-<li><strong>Raccourcis, Siri et Spotlight</strong> : « Ajouter une dépense », « Solde du compte » (protégé par Touch ID), « Prochaines échéances ».</li>
-<li><strong>Recherches sauvegardées</strong> dans la vue Filtre.</li>
-<li><strong>Export PDF et impression des rapports</strong> et de la courbe de trésorerie : titre, compte, période, nom de la base et date en pied de page, mise en page claire pour le papier.</li>
-<li><strong>Rapports</strong> : part « Autres » des camemberts cliquable pour voir le détail.</li>
-<li><strong>Budgets</strong> : règle <strong>50/30/20</strong> (Besoins / Envies / Épargne), type de rubrique choisissable, histogramme mensuel Revenus / Dépenses, détail des transactions.</li>
-<li><strong>Assistant de démarrage</strong> enchaîné : comptes → import → budgets, avec indicateur de progression.</li>
-<li><strong>Nouveau document</strong> : choix entre une base vide et une base pré-remplie de comptes d'exemple ; nom pré-rempli.</li>
-<li><strong>Copier / coller</strong> des transactions et des relevés bancaires <strong>entre comptes</strong>.</li>
-<li><strong>Vue Relevé</strong> : colonne Solde, et Couper / Copier / Coller (menu contextuel et ⌘X / ⌘C / ⌘V).</li>
-<li><strong>Courbe de trésorerie</strong> : dégradé entre chaque courbe et l'axe 0, dans la couleur du statut ; ligne de repère à 0.</li>
-<li><strong>Transactions ventilées</strong> signalées dans la liste : badge « +N » après le libellé, détail des sous-opérations au survol, « Ventilée » quand rubriques ou catégories diffèrent.</li>
-<li><strong>Palette de couleurs prédéfinies</strong> pour les modes de paiement et les rubriques : 12 pastilles en un clic, en plus du sélecteur de couleur libre.</li>
-<li><strong>Échéancier</strong> : la « Date de valeur » indique sa correspondance (date de pointage de la prochaine transaction générée).</li>
-<li><strong>Opérations régulières détectées</strong> dans l'Échéancier : Pecule repère les prélèvements et les revenus réguliers (même libellé, rythme régulier, montant stable, toujours actifs) qui ne sont pas encore une échéance et propose de la créer, formulaire pré-rempli ; « Ignorer » masque la suggestion pour le compte. Libellés tronqués reconnus, deux versements le même jour (deux retraites) suivis séparément, et échéance au montant périmé signalée avec « Mettre à jour l'échéance ».</li>
-<li><strong>Échéancier</strong> : bandeau Recettes régulières / Dépenses incompressibles / Reste à vivre, ramenés au mois selon le rythme de chaque échéance.</li>
-<li><strong>Projection du solde</strong> dans l'Échéancier, sur 3, 6 ou 12 mois : courbe calculée à partir du solde du jour, des opérations déjà saisies et des échéances en cours ; signale le premier jour où le solde passe sous zéro, sinon le point le plus bas. Au survol, une fenêtre donne la date, le solde et les mouvements du jour.</li>
-<li><strong>Objectifs d'épargne</strong> (Synthèse › Objectifs d'épargne) : un objectif par carte (« Vacances 1 500 € pour juin »), lié à une catégorie dont les transactions comptent comme versements ; jauge de progression, montant à mettre de côté chaque mois et état (atteint, en bonne voie, en retard, date dépassée). Résumé sur l'Accueil (mini-jauges et montant mensuel) et signalement des objectifs en retard dans « Actions à mener ».</li>
-<li><strong>Programmer l'épargne</strong> : depuis la carte d'un objectif, un bouton ouvre le formulaire d'échéance pré-rempli (un versement par mois jusqu'à la date visée, montant arrondi à l'euro supérieur, dans la catégorie de l'objectif) ; les échéances déjà présentes dans la catégorie sont signalées.</li>
-<li><strong>Virements programmés</strong> : champ « Compte lié » en tête du formulaire d'échéance ; chaque occurrence crée l'écriture miroir dans l'autre compte, reliée à la première (icône de virement), et la projection du solde du compte lié compte ces virements. Créée depuis un virement (opération détectée, clic droit), l'échéance reprend son compte lié.</li>
-<li><strong>Rapport annuel</strong> (Rapports › Rapport annuel) : deux pages A4 comparant l'année à la précédente (même période pour l'année en cours) — synthèse, dépenses mensuelles, tableau mois par mois, rubriques et principales catégories ; export en PDF.</li>
-<li><strong>Vérifier la base</strong> (Fichier › Vérifier la base…) : recherche les incohérences dans tous les comptes (catégories mal rattachées ou vides, sous-opérations orphelines ou sans catégorie, transactions vides, liens de virement cassés, échéances terminées non fermées) et les répare après confirmation, avec une sauvegarde automatique juste avant.</li>
-<li><strong>Simulateur de crédit</strong> : courbe de l'évolution du capital restant dû, à droite du tableau d'amortissement ; survol et clic synchronisés avec le tableau.</li>
-<li><strong>Virements entre comptes</strong> signalés dans la liste : flèche sortante ou entrante à gauche du cadenas, avec le nom de l'autre compte en info-bulle.</li>
-<li><strong>Catégorisation automatique réglable</strong> par compte (Paramètres › Transaction), avec « Appliquer à tous les comptes » (fond vert quand c'est déjà le cas partout).</li>
-<li><strong>⇧-clic</strong> dans la liste des transactions : la sélection inclut les transactions des jours, mois ou du groupe Carte Bancaire repliés, qui se déplient.</li>
-<li><strong>Version directe</strong> (hors App Store) : période d'essai de 30 jours, application signée Developer ID et notarisée par Apple.</li>
-<li><strong>Déplacer une catégorie</strong> vers une autre rubrique (clic droit « Déplacer vers la rubrique », glisser-déposer, ou rubrique choisie dans « Éditer la catégorie ») ; un homonyme dans la rubrique cible peut être fusionné (objectifs additionnés).</li>
-<li><strong>Supprimer une rubrique utilisée</strong> : ses catégories sont déplacées dans la rubrique choisie (homonymes fusionnés) au lieu d'un refus.</li>
-<li><strong>Rapport annuel sur plusieurs comptes</strong> : choix « Ce compte », dossier du compte ou « Tous les comptes » ; virements entre ces comptes exclus des recettes et dépenses ; page « Par compte » (recettes, dépenses, net, soldes N et N−1) ; comptes d'une autre devise signalés.</li>
-<li><strong>Rapport annuel</strong> : impression depuis la barre d'outils (pages A4 identiques au PDF).</li>
-<li><strong>Devise d'un compte</strong> (Identité › Compte) : choix de la devise, sans conversion des montants (seule l'unité affichée change, avec confirmation si le compte a des transactions). Refusé tant que le compte a des virements ou échéances liées avec un compte d'une autre devise ; « Compte lié » ne propose que les comptes de même devise.</li>
-</ul>
-<h3>Modifié</h3>
-<ul>
-<li><strong>Soldes des rapports plus rapides</strong> : les soldes du compte à la fin de la période (en bas des rapports) se lisent dans un index construit une fois par compte et par version des données ; sur dix ans d'historique, environ 3 ms par calcul au lieu de 30 ms.</li>
-<li><strong>Accueil, « Actions à mener »</strong> : la ligne des échéances des 7 prochains jours liste chaque échéance (libellé, date, montant) ; avant, seule la première était nommée. Elle s'intitule désormais « N échéances dans les 7 jours », comme le bandeau d'alertes (et non plus « paiements dus », inexact pour une rentrée comme un salaire). Singulier corrigé en allemand, espagnol et italien (« 1 échéance »).</li>
-<li><strong>Badge du Dock</strong> : chaque échéance des 7 prochains jours compte pour une (avant, toutes ensemble comptaient pour une seule alerte) ; les autres alertes (solde prévu négatif, budget dépassé) sont comptées comme avant.</li>
-<li><strong>Rapport comparatif plus rapide sur un long historique</strong> : le tableau (une colonne par mois) s'affiche environ deux fois plus vite ; sur dix ans, l'ouverture passe d'environ 0,7 s à 0,35 s.</li>
-<li><strong>Rapports plus rapides sur un long historique</strong> (Rubriques, Rubriques par mois, Recettes / dépenses, camemberts) : un rapport n'est recalculé que si la période, le compte ou les données changent, au lieu de cinq fois à l'ouverture ; sur dix ans de transactions, l'ouverture du rapport par rubrique passe d'environ 1 s à 0,4 s.</li>
-<li><strong>Version App Store</strong> : la vue « Bourse » (cours de bourse via une interface Yahoo Finance non officielle) est retirée, ainsi que l'accès au réseau ; l'application fonctionne entièrement hors ligne. Elle reste dans la version distribuée directement.</li>
-<li><strong>Courbe de trésorerie plus rapide sur un long historique</strong> : sur dix ans (près de 6 000 opérations), ouverture en 0,5 s au lieu de 0,9 s et curseur de période environ quatre fois plus fluide (totaux par jour calculés une fois, un seul rendu par mouvement).</li>
-<li><strong>Import CSV</strong> : les colonnes sont reliées automatiquement d'après les en-têtes du fichier (export de Pecule dans les 5 langues, intitulés usuels des banques). Avant l'import, un encadré signale les colonnes du fichier non importées et les champs non reliés avec leur conséquence (statut par défaut, catégorie devinée…) ; la date et le montant sont obligatoires.</li>
-<li><strong>Base de démonstration enrichie</strong> (toutes les langues) : solde initial (le solde ne passe plus en négatif), objectifs de budget réalistes (plus d'alertes de dépassement), sept échéances mensuelles (salaire, loyer, abonnements, virement d'épargne), quelques opérations « En cours » et des dépenses de carburant plus réalistes. Opérations et échéances sont recalées ensemble sur aujourd'hui à l'ouverture.</li>
-<li><strong>Coller ou importer des milliers de transactions</strong> : barre de progression au lieu de la roue qui tourne — le collage (à partir de 500 transactions) et l'import CSV enregistrent par paquets de 1 000.</li>
-<li><strong>Coller dans un compte d'une autre devise</strong> : confirmation, les montants étant collés tels quels sans conversion (« 42,50 € deviennent 42,50 $US »).</li>
-<li><strong>Rapport annuel</strong> : sans écriture l'année précédente, les comparaisons vides (N−1, écarts, barres grises, colonnes « Dépenses N−1 » et « Solde N−1 ») sont masquées ; une note l'indique.</li>
-<li><strong>Rapport annuel</strong> : l'export PDF se fait par le bouton de la barre d'outils, comme pour les autres rapports (bouton du haut du rapport retiré).</li>
-<li><strong>Paramètres du compte</strong> : l'onglet « Gérer les rubriques » s'appelle « Rubrique », comme les autres onglets.</li>
-<li><strong>Rubriques et catégories</strong> (Paramètres du compte) : tri des catégories par nom ou par objectif mensuel, croissant ou décroissant ; le choix est mémorisé.</li>
-<li><strong>Tables de l'Échéancier, des relevés bancaires et des chéquiers</strong> : elles occupent toute la largeur de la vue (libellé élargi dans l'Échéancier, colonnes élargies en proportion ailleurs) ; défilement horizontal inchangé dans une fenêtre étroite.</li>
-<li><strong>Échéancier</strong> : sélection multiple (⌘-clic, ⇧-clic) et suppression de plusieurs échéances en une fois, après confirmation ; un seul « Annuler » les rétablit toutes.</li>
-<li><strong>Accueil et alertes</strong> : « Solde aujourd'hui », « Prévision fin de mois » et l'alerte « Découvert prévu » utilisent le calcul de la projection du solde : solde initial du compte et échéances à venir compris. Ils concordent avec la barre latérale et la courbe de l'Échéancier.</li>
-<li><strong>Accueil</strong> : « Actions à mener » et « Budgets du mois » comptent les dépassements par catégorie, comme les alertes de budget (« Rubrique / Catégorie », orange puis rouge au-delà de 120 %) ; les rubriques de revenus ne sont plus signalées comme dépassées.</li>
-<li><strong>Échéancier</strong> : les boutons Ajouter, Éditer, Supprimer… sont placés juste sous la table des échéances.</li>
-<li><strong>Nouveau nom : Pecule</strong> (auparavant PegaseUIData) : menu de l'application, « À propos », Dock, écran de verrouillage, icône de la barre des menus (« Ouvrir Pecule »), Siri et Raccourcis. Les données et réglages sont conservés. L'application s'appelle désormais aussi <code>Pecule.app</code>.</li>
-<li><strong>Aide</strong> : le manuel PDF complet (français ou anglais) remplace l'aide intégrée ; un seul menu Aide.</li>
-<li><strong>Couleur d'accent</strong> pour toutes les icônes de la barre d'outils, des comptes et du sélecteur de vue, y compris le bouton de barre latérale ; le bouton de l'inspecteur passe à l'extrême droite.</li>
-<li><strong>Tables</strong> (liste des transactions, Échéancier, relevés bancaires, chéquiers) : cadre, lignes alternées jusqu'en bas, en-tête visible et message quand la table est vide ; sélection en fond plein, comme dans les Paramètres.</li>
-<li><strong>Rouge des montants</strong> moins pâle en mode clair.</li>
-<li><strong>Anglais américain</strong> : « pointage » traduit par « reconciliation ».</li>
-<li><strong>Fenêtre d'accueil</strong> : titre traduit (« Bienvenue »…) ; la fenêtre principale affiche le nom de l'application quand aucune base n'est ouverte.</li>
-<li><strong>Graphiques</strong> (rapports, bourse, courbe de trésorerie) entièrement refaits avec Swift Charts ; sélection au clic plus fiable.</li>
-<li><strong>Bandeau des soldes</strong> : intitulés Solde bancaire / réel / final, avec en sous-titre les statuts qui les composent (Réalisé / Réalisé + En cours / Réalisé + En cours + Prévu).</li>
-<li><strong>Sauvegarde</strong> : quotidienne et à la fermeture par défaut, dans le dossier de la base ; sauvegarde à la fermeture fiabilisée. Fenêtre des Préférences élargie.</li>
-<li><strong>Accueil</strong> : tableau de bord centré sur le compte sélectionné.</li>
-<li><strong>Liste des transactions</strong> : colonne « Date de pointage » (au lieu de « Date de valeur »), même terme que le formulaire ; tri par date de transaction au sein d'un même jour.</li>
-<li><strong>Sélection</strong> homogène sur toutes les listes et tables ; boutons « Éditer » homogènes.</li>
-<li><strong>Montants</strong> formatés en devise dans les champs et colonnes ; montant du formulaire coloré selon le signe et toujours en lecture seule (somme des sous-opérations).</li>
-<li><strong>Export CSV</strong> adapté à la région (séparateurs, en-têtes traduits).</li>
-<li><strong>Mode de paiement par défaut</strong> : Virement (crédit) / Prélèvement (débit).</li>
-<li><strong>Verrouillage</strong> désactivé par défaut (au démarrage et après inactivité).</li>
-<li><strong>Traductions</strong> complétées (allemand, anglais britannique, espagnol, italien) : impressions, rapports, filtres, bourse, relevés, graphiques.</li>
-<li><strong>Info-bulles</strong> plus rapides (0,4 s).</li>
-<li><strong>Bouton Apparence</strong> (barre d'outils) plus réactif : toute sa surface est cliquable, et le thème se choisit par boutons radio (toute la ligne est cliquable).</li>
-<li><strong>Couleurs des listes adoucies</strong> : les couleurs très vives (rubriques, modes de paiement, statuts, montants, soldes) sont affichées dans une teinte plus posée et plus lisible, par exemple un rouge légèrement assombri au lieu du rouge pur. Les couleurs choisies restent enregistrées telles quelles.</li>
-<li><strong>Couleurs par défaut</strong> des rubriques et modes de paiement des nouvelles bases : couleurs système d'Apple, plus douces, et identiques quel que soit le thème actif à la création.</li>
-<li><strong>Rapport comparatif</strong> redessiné : il suit désormais le passage clair / sombre en direct (les colonnes ne se redimensionnent plus à la souris).</li>
-</ul>
 <h3>Corrigé</h3>
 <ul>
-<li><strong>« Annuler » dans le panneau de saisie</strong> défait maintenant les changements de sous-opérations : une sous-opération modifiée (montant, libellé, catégorie) ou supprimée avant « Enregistrer » revient à l'identique ; avant, la modification restait enregistrée.</li>
-<li><strong>Fichier récent supprimé</strong> : cliquer sur une base de l'écran d'accueil qui n'existe plus ne crée plus une base vide à sa place ; le panneau d'ouverture est proposé.</li>
-<li><strong>Rapports : encadré des soldes</strong> (bancaire, réel, final) : solde du compte atteint à la fin de la période choisie, comme dans la courbe de trésorerie — et non plus « solde initial + opérations affichées » (par exemple 33 880 € pour les seuls salaires d'une rubrique).</li>
-<li><strong>Graphique recettes / dépenses</strong> : un clic sur la barre verte d'un mois affiche bien ses recettes (il sélectionnait les dépenses dans les langues où « Dépenses » précède « Recettes » par ordre alphabétique).</li>
-<li><strong>Barre de sélection</strong> : singulier en anglais, espagnol, italien et allemand (« 1 selected transaction »…) ; échéancier : colonne « Prochaine » mieux traduite en italien (« Prossima ») et en allemand (« Nächste »).</li>
-<li><strong>Démo espagnole</strong> : les opérations étaient rattachées à la carte de crédit du dossier épargne au lieu du compte courant ; le dossier « Ahorros » devient « Cuentas de ahorro » pour s'afficher après « Cuenta Bancaria » (tri par nom), aussi dans les nouvelles bases.</li>
-<li><strong>Courbe de trésorerie</strong> : le filtre par rubrique recalcule bien la courbe.</li>
-<li><strong>Courbe de trésorerie</strong> : les libellés de l'axe des dates ne se superposent plus à ceux des séparateurs de mois.</li>
-<li><strong>Courbe de trésorerie sur une période partielle</strong> (1 mois, 6 mois, curseur) : la courbe part du solde réellement atteint au début de la période, au lieu du seul solde initial du compte. Les trois soldes sous la courbe sont ceux atteints à la fin du jour sélectionné (ou de la période), et non plus la somme des seules opérations de ce jour.</li>
-<li><strong>Colonne Solde des listes partielles</strong> (jour de la courbe, relevé bancaire, rapports) : solde réel du compte après chaque opération, et non plus calculé sur les seules lignes affichées.</li>
-<li><strong>Ouverture d'une base volumineuse</strong> plus rapide : les transactions du compte ne sont plus lues deux fois, et leur chargement est environ 40 % plus rapide.</li>
-<li><strong>Long historique (10 ans et plus)</strong> : ouverture de la base, courbe de trésorerie, accueil, budgets, rapports et rapport annuel nettement plus rapides (de plusieurs secondes à une fraction de seconde pour la plupart). Sur plusieurs années, la courbe de trésorerie affiche un repère par an.</li>
-<li><strong>Copier-coller de milliers de transactions</strong> entre comptes : quelques secondes au lieu de plusieurs minutes (roue qui tourne).</li>
-<li><strong>Liste des transactions lente</strong> avec un long historique : seuls les 12 derniers mois sont dépliés par défaut (les plus anciens se déplient d'un clic, l'état est mémorisé), et l'affichage des montants est plus rapide.</li>
-<li><strong>Camemberts</strong> : une seule part surlignée à la fois — choisir une part des dépenses retire le surlignage des recettes (et inversement), effacer le filtre (×) retire le surlignage.</li>
-<li><strong>Barre latérale et barre des menus</strong> : chaque compte affiche sa propre devise et les totaux sont donnés par devise (des comptes en € et en $ ne s'additionnent plus).</li>
-<li><strong>Devise</strong> : toutes les vues affichent la devise du compte (certaines prenaient celle de la région du Mac : $ dans la liste et £ dans l'échéancier pour un compte en livres).</li>
-<li><strong>Traductions</strong> : « Importer » (barre d'outils, au lieu de « Imporer ») ; « Creation Mode » en anglais ; compteur de transactions au pluriel en anglais, allemand, espagnol et italien.</li>
-<li><strong>Bases de démonstration</strong> : rubriques « Maison » et « Revenus » colorées (elles étaient noires, invisibles en thème sombre) ; dossier « Savings » et « Épargne » ; démo anglaise américaine en dollars.</li>
-<li><strong>Échéancier</strong> : « Ajouter » ouvre toujours un formulaire vide (il pouvait ouvrir l'échéance sélectionnée en modification).</li>
-<li><strong>Camemberts (rubriques, modes de paiement)</strong> : seul un clic sélectionne une part ; le simple survol de la souris la sélectionnait (filtre décalé d'un clic, filtre « Revenus » actif à l'ouverture). Re-cliquer la part la désélectionne.</li>
-<li><strong>Base de démonstration (français, allemand)</strong> : les dates sont recalées sur aujourd'hui à l'ouverture, comme dans les autres langues (elles restaient en 2025 : Accueil et budgets vides).</li>
-<li><strong>Échéances d'un autre compte</strong> : la transaction créée au lancement garde la catégorie de l'échéance (elle pouvait recevoir la catégorie d'un autre compte, ou créer une rubrique en double).</li>
-<li><strong>Import OFX</strong> : montants à virgule décimale (« -12,50 ») lus correctement (ils donnaient 0) ; la date ne recule plus d'un jour à l'ouest de Greenwich.</li>
-<li><strong>Import CSV</strong> : champs entre guillemets contenant le séparateur, fins de ligne Windows, montants avec espaces (« 1 234,56 »), signe « − » ou entre parenthèses, années sur deux chiffres (« 05/10/26 »).</li>
-<li><strong>Rubriques et modes de paiement</strong> : un nom déjà pris dans le compte (majuscules et espaces ignorés) est refusé, comme pour les catégories.</li>
-<li><strong>Gérer les rubriques</strong> : « Ajouter » n'ouvre plus la modification de la catégorie sélectionnée à la première ouverture ; la suppression d'une catégorie (et sa fenêtre de remplacement) fonctionne de façon fiable ; un nom de catégorie déjà pris dans la rubrique est refusé.</li>
-<li><strong>Coller dans un autre compte</strong> : l'opération garde sa rubrique et sa catégorie (créées dans le compte cible si elles n'y existent pas, avec un message), le statut de même type ; elle n'est plus collée sans catégorie.</li>
-<li><strong>Sous-opérations</strong> : impossible d'enregistrer une sous-opération sans catégorie (OK grisé, message explicatif) ; un favori de la barre des menus dont la catégorie n'existe plus prend la catégorie par défaut du compte.</li>
-<li><strong>Nouvelle transaction</strong> : modifier une sous-opération déjà ajoutée affiche bien son libellé, sa rubrique, sa catégorie et son montant (le formulaire s'ouvrait vide).</li>
-<li><strong>Ajouter une catégorie</strong> (Paramètres › Rubrique) : la catégorie est bien créée — le formulaire propose la rubrique, et « Ajouter la catégorie » du clic droit n'ouvre plus le formulaire de rubrique.</li>
-<li><strong>Supprimer une catégorie utilisée</strong> ne vide plus la catégorie de ses opérations : une fenêtre propose la catégorie de remplacement (opérations, échéances, catégorie par défaut, objectifs d'épargne). Une rubrique dont une catégorie est utilisée ne peut plus être supprimée.</li>
-<li><strong>Catégories</strong> : une catégorie ajoutée depuis les Paramètres (ou créée par une échéance, un import QIF) est bien listée par sa rubrique — arbre des rubriques, menus, budgets — et n'est plus recréée en double.</li>
-<li><strong>Échéancier</strong> : en-tête de colonne « LIbellé » corrigé en « Libellé ».</li>
-<li><strong>Échéancier</strong> : les transactions générées au lancement prennent les statuts de leur propre compte (et non ceux du compte affiché).</li>
-<li><strong>Échéancier</strong> : la dernière occurrence d'une échéance est bien générée (une échéance de 12 occurrences s'arrêtait après la 11e) ; la projection du solde la compte aussi.</li>
-<li>Une transaction pouvait apparaître <strong>en double</strong> dans la liste après un changement de date de pointage.</li>
-<li>Une ligne sélectionnée apparaissait <strong>en double</strong> après un passage de la vue détaillée à la vue compacte (ou l'inverse).</li>
-<li>« <strong>C:</strong> » affiché sans numéro de chèque dans la colonne Relevé/Chèque.</li>
-<li>Après l'enregistrement d'une transaction, la ligne restait surlignée et ne pouvait plus être rouverte d'un simple clic.</li>
-<li>Ajouter une transaction ne faisait rien si l'ajout d'une sous-opération avait été annulé, et laissait des <strong>transactions vides à 0,00 €</strong> ; seule la dernière sous-opération était enregistrée dans une transaction ventilée.</li>
-<li>Un double-clic dans la barre latérale, l'inspecteur ou la barre d'outils ouvrait l'éditeur de sous-opération.</li>
-<li><strong>Solde de la barre latérale</strong> erroné (solde initial ignoré) ; soldes, courbe et rapports désormais rafraîchis après import ou modification.</li>
-<li>Montant et solde illisibles sur une ligne sélectionnée.</li>
-<li>Après un passage du mode sombre au mode clair (ou l'inverse), une partie des lignes gardait les couleurs de l'ancien mode, parfois illisibles.</li>
-<li>Numéro de relevé saisi à la création perdu ; échec silencieux de l'échéancier.</li>
-<li>Ouverture de la base d'exemple (fichiers annexes de la base).</li>
-<li>Glisser-déposer d'imports et export de relevés sous le bac à sable (sandbox).</li>
-<li>Nombreux textes illisibles en mode sombre (camemberts, feuilles, sous-opérations).</li>
-<li>Premier lancement : barre latérale, authentification et demande de mise à jour.</li>
-<li>Nouvelle base : la <strong>catégorie par défaut</strong> (Paramètres / Transactions) variait d'un compte à l'autre, et un compte pouvait récupérer les préférences d'un autre compte.</li>
-<li><strong>Catégories rangées dans la mauvaise rubrique</strong> quand un même nom existe dans plusieurs rubriques (« Autres »…) : import QIF, transactions générées par l'échéancier (qui pouvait déplacer une catégorie), coller une transaction.</li>
-<li>Libellés non traduits ou mal traduits (dont « Dater de valeur », « Occurence », « Imporer »).</li>
-</ul>
-<h3>Supprimé</h3>
-<ul>
-<li>Rapport « Rubrique Bar » (doublon de « Rubriques par mois »).</li>
-<li>Bibliothèque de graphiques DGCharts (remplacée par Swift Charts).</li>
+<li><strong>Rapports</strong> : changer le mode de paiement ou le statut d'une transaction depuis le menu contextuel de la liste d'un rapport recalcule maintenant le graphique, et la transaction qui sort de la liste n'est plus gardée dans le panneau d'édition.</li>
+<li><strong>Déverrouillage</strong> : sur Mac, les messages parlent de Touch ID seulement (plus de Face ID, absent des Mac) ; le manuel est corrigé de même.</li>
 </ul>
             ]]></description>
             <enclosure
-                url="https://github.com/pecule-app/pecule-app.github.io/releases/download/pecule-v1.0.2/Pecule.zip"
-                sparkle:edSignature="3cUgS7QfqAg5DMPokqhYs0p5Up99v7IjPmAzzo/V3CSDtvoQnJnesypQJ5de5TWOKHOAe9yAMmezTGvum0aDDw=="
-                length="26397180"
+                url="https://github.com/pecule-app/pecule-app.github.io/releases/download/pecule-v1.0.3/Pecule.zip"
+                sparkle:edSignature="po4UmZig51pqPr1Qcv8BasqvbNtV1SOSpTGc4VqQ7Q8705Ko0to7JMGfV9XyKP18f+2GMDn0nlkuvPmkRry/Aw=="
+                length="26401539"
                 type="application/octet-stream"/>
         </item>
     </channel>
