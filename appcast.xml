@@ -3,21 +3,24 @@
     <channel>
         <title>Pecule</title>
         <item>
-            <title>Version 1.0.3</title>
-            <sparkle:version>5462</sparkle:version>
-            <sparkle:shortVersionString>1.0.3</sparkle:shortVersionString>
-            <pubDate>Tue, 17 Nov 2026 11:15:13 +0000</pubDate>
+            <title>Version 1.0.4</title>
+            <sparkle:version>5473</sparkle:version>
+            <sparkle:shortVersionString>1.0.4</sparkle:shortVersionString>
+            <pubDate>Wed, 18 Nov 2026 19:56:30 +0000</pubDate>
             <description><![CDATA[
-<h3>Corrigé</h3>
+<h3>Ajouté</h3>
 <ul>
-<li><strong>Rapports</strong> : changer le mode de paiement ou le statut d'une transaction depuis le menu contextuel de la liste d'un rapport recalcule maintenant le graphique, et la transaction qui sort de la liste n'est plus gardée dans le panneau d'édition.</li>
-<li><strong>Déverrouillage</strong> : sur Mac, les messages parlent de Touch ID seulement (plus de Face ID, absent des Mac) ; le manuel est corrigé de même.</li>
+<li><strong>Avis App Store</strong> (version App Store) : après au moins 7 jours d'utilisation étalés sur deux semaines, l'Accueil propose une fois par version la fenêtre de notation d'Apple.</li>
+</ul>
+<h3>Modifié</h3>
+<ul>
+<li><strong>Paramètres › Mode de paiement</strong> et <strong>Paramètres › Rubrique</strong> : tables au style du Relevé et des Chéquiers (lignes alternées, couleur de la rubrique, montants alignés) ; dans Mode de paiement, les colonnes Nom et Prénom ne sont plus inversées.</li>
 </ul>
             ]]></description>
             <enclosure
-                url="https://github.com/pecule-app/pecule-app.github.io/releases/download/pecule-v1.0.3/Pecule.zip"
-                sparkle:edSignature="po4UmZig51pqPr1Qcv8BasqvbNtV1SOSpTGc4VqQ7Q8705Ko0to7JMGfV9XyKP18f+2GMDn0nlkuvPmkRry/Aw=="
-                length="26401539"
+                url="https://github.com/pecule-app/pecule-app.github.io/releases/download/pecule-v1.0.4/Pecule.zip"
+                sparkle:edSignature="7l1FQHLrXaKtU1A5WARWmww4RDTmu5kWrvT9i6luG5EcuqPvFU+DMJeQZrnw8vkHxII7kuxYlJOCrqHKJceTBA=="
+                length="26426290"
                 type="application/octet-stream"/>
         </item>
     </channel>
